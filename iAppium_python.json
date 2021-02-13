@@ -1,7 +1,7 @@
 {
     "desired_caps": {
         "platformName": "Android",
-        "deviceName": "<your device name>",
+        "deviceName": "emulator-5554",
         "udid": "<your device udid>",
         "noReset": "false",
         "automationName": "UiAutomator2",

@@ -14,15 +14,17 @@ class IAppium(unittest.TestCase):
         desired_caps = {}
         appium_server_url = config['appium_server_url']
         desired_caps['platformName'] = config['desired_caps']['platformName']
-        desired_caps['udid'] = config['desired_caps']['udid']
+        # desired_caps['udid'] = config['desired_caps']['udid']
         desired_caps['deviceName'] = config['desired_caps']['deviceName']
         desired_caps['appPackage'] = config['desired_caps']['appPackage']
         desired_caps['appActivity'] = config['desired_caps']['appActivity']
         desired_caps['automationName'] = config['desired_caps']['automationName']
         desired_caps['noReset'] = config['desired_caps']['noReset']
-        desired_caps['app'] = f'{os.path.abspath(os.curdir)}/app/ContactManager.apk'
+        # desired_caps['app'] = r'X:\Users\test\Desktop\test\docker\jenkins\iAppium_python\app\ContactManager.apk'
+        desired_caps['app'] = f'{os.path.abspath(os.curdir)}\..\\app\\ContactManager.apk'
 
         self.driver = webdriver.Remote(appium_server_url, desired_caps)
+        self.driver.implicitly_wait(10)
 
     def tearDown(self):
         self.driver.quit()
